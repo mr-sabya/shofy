@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shofy - Multipurpose eCommerce HTML Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/swiper-bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/font-awesome-pro.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/flaticon_shofy.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/spacing.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/main.css' %}">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'frontend/css/custom.css' %}">
+</head>
+
+<body>
+
+
+    <!-- pre loader area start -->
+    {% include 'partials/preloader.html' %}
+    <!-- pre loader area end -->
+
+    <!-- back to top start -->
+    <div class="back-to-top-wrapper">
+        <button id="back_to_top" type="button" class="back-to-top-btn">
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+    <!-- back to top end -->
+
+    <!-- offcanvas area start -->
+    {% include 'partials/menu/off-canvas.html' %}
+    <!-- offcanvas area end -->
+    
+    <!-- mobile menu area start -->
+    {% include 'partials/menu/mobile-menu.html' %}
+    <!-- mobile menu area end -->
+
+    
+
+    <!-- cart mini area start -->
+    {% include 'partials/cart.html' %}
+    <!-- cart mini area end -->
+
+    <!-- header area start -->
+    {% if request.resolver_match.url_name == 'home' %}
+    {% include 'partials/header.html' %}
+    {% else %}
+    {% include 'partials/all-header.html' %}
+    {% endif %}
+    <!-- header area end -->
+    
+
+    {% if request.resolver_match.url_name == 'home' %}
+    {% include 'partials/menu/sticky-menu.html' %}
+    {% endif %}
+    
+
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+    
+
+
+
+    <!-- footer area start -->
+    {% include 'partials/footer.html' %}
+    <!-- footer area end -->
+
+
+
+    <!-- JS here -->
+    <script src="{% static 'frontend/js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'frontend/js/vendor/waypoints.js' %}"></script>
+    <script src="{% static 'frontend/js/bootstrap-bundle.js' %}"></script>
+    <script src="{% static 'frontend/js/meanmenu.js' %}"></script>
+    <script src="{% static 'frontend/js/swiper-bundle.js' %}"></script>
+    <script src="{% static 'frontend/js/slick.js' %}"></script>
+    <script src="{% static 'frontend/js/range-slider.js' %}"></script>
+    <script src="{% static 'frontend/js/magnific-popup.js' %}"></script>
+    <script src="{% static 'frontend/js/nice-select.js' %}"></script>
+    <script src="{% static 'frontend/js/purecounter.js' %}"></script>
+    <script src="{% static 'frontend/js/countdown.js' %}"></script>
+    <script src="{% static 'frontend/js/wow.js' %}"></script>
+    <script src="{% static 'frontend/js/isotope-pkgd.js' %}"></script>
+    <script src="{% static 'frontend/js/imagesloaded-pkgd.js' %}"></script>
+    <script src="{% static 'frontend/js/ajax-form.js' %}"></script>
+    <script src="{% static 'frontend/js/main.js' %}"></script>
+
+
+    <!-- custom js -->
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>
